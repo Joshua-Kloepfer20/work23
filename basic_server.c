@@ -3,18 +3,17 @@
 
 int main() {
 
-  int to_client;
-  int from_client;
-  from_client = server_handshake( &to_client );
+  int sd
+  sd = server_handshake();
   char input[BUFFER_SIZE];
   int x;
-  while (x = read(from_client, input, BUFFER_SIZE)) {
+  while (x = read(sd, input, BUFFER_SIZE)) {
         input[x-1] = '\0';
         int i;
         for (i = 0; i < strlen(input); i++) {
             input[i] = input[i] + 1;
         }
-        write(to_client, input, BUFFER_SIZE);
+        write(sd, input, BUFFER_SIZE);
     }
   return 0;
 }
