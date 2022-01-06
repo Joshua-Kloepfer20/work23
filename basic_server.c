@@ -3,7 +3,7 @@
 
 int main() {
 
-  int sd
+  int sd;
   sd = server_handshake();
   char input[BUFFER_SIZE];
   int x;
